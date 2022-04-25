@@ -1,0 +1,69 @@
+.header {
+    width: 700px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.bottom {   
+    position: absolute;
+    width: 700px;
+    bottom: 0px;
+}
+
+.moveButton {
+    font-weight: bold;
+    font-size: 1em;
+    background-color: SaddleBrown;
+    color: Moccasin;
+}
+
+.right {      
+    width: 325px;
+    position: absolute;
+    right: 20px;
+}
+
+ul {          
+    list-style-type: none;
+}
+
+li {          
+    margin-left: -40px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+}
+
+.left {
+    width: 325px;
+    position: absolute;
+    left: 20px;
+    background-color: Moccasin;
+}
+
+.outer {
+    position: absolute; 
+    width: 700px;
+    height: 650px;
+    border: 5px solid gray;
+    padding: 10px;
+    margin: 10px;
+    background-color: LightBlue;
+}
+
+.justifyText {
+    text-align: justify;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.largeBold {
+    font-size: large;
+    font-weight: bold;
+}
+
+.emphasized {
+    color: FireBrick;
+}
