@@ -41,3 +41,18 @@ function trySlide(state, num) {
         return null;
     }
 }
+
+function validMove(tile, blank) {
+    var valid = false;
+    
+    if (((tile.column - 1 === blank.column
+                || tile.column + 1 === blank.column)
+                && (tile.row === blank.row))
+                || ((tile.row - 1 === blank.row
+                || tile.row + 1 === blank.row)
+                && tile.column === blank.column)) {
+            valid = true;
+        }
+        
+        return valid;
+}
