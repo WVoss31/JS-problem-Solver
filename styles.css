@@ -67,3 +67,56 @@ li {
 .emphasized {
     color: FireBrick;
 }
+
+.congratsButton {
+    background-color: cadetblue;
+    color: black;
+    text-align: center;
+    font-size: medium;
+    margin: 75px;
+}
+
+.contratsPanel {
+    background-color: rebeccapurple;
+    width: auto;
+    height: max-content;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 25px;
+}
+
+.contratsText {
+    color: lime;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 300px;
+    position: relative;
+}
+
+.moveText {
+    color: lime;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+    font-size: large;
+    position: relative;
+}
+
+.goalstate {
+    width: 250px;
+    position: absolute;
+    margin-left: 110px;
+    background-color: Moccasin;
+    text-align: center;
+}
+
+.goodbyeText {
+    color: crimson;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 300px;
+    margin-bottom: 300px;
+    position: relative;
+}

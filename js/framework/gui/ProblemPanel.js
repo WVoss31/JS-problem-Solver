@@ -84,6 +84,7 @@ function ProblemPanel(problem) {
 				       + assistant.moveCount + " moves.");
 			movesUL.fadeOut("slow");
 			animateCongrats();
+			congratulate(); //Added
 		    }
 		} else {
 		    displayMessage("That move is not legal.");
@@ -190,5 +191,53 @@ function ProblemPanel(problem) {
 	e.addClass("largeBold");
 	return e;
     }
+
+	function congratulate() {
+		//hiding the chooser wheel
+		$("#chooser").hide();
+
+		//creating the goal state to display
+		var goalstateDisplay = $("<div></div>").addClass("goalstate");
+		var goalstateCanvas = problem.currentState.makeCanvas();
+		goalstateDisplay.append($(goalstateCanvas));
+
+		//creating the panel, the message, and the moves
+		var CongratsPanel = $("<div></div>").addClass("contratsPanel");
+		var congratsMessage = $("<div></div>").text("Congratulations!").addClass("contratsText");
+		var probleminfo = $("<div></div>").text("You solved the problem in:\n" + assistant.moveCount + "\n Moves");
+		probleminfo.addClass("moveText");
+
+		//creating exit button and functionality
+		var exitButton = $("<button></button>").text("Exit");
+		exitButton.addClass("congratsButton");
+		exitButton.click(() => {
+			exitButton.hide();
+			CongratsPanel.hide();
+			var exitPanel = $("<div></div>").addClass("contratsPanel");
+			var goodbye = $("<div></div>").text("Goodbye").addClass("goodbyeText");
+
+			exitPanel.append(goodbye);
+			$("body").append(exitPanel);
+		});
+
+		//creating next button and functionality
+		var nextButton = $("<button></button>").text("Continue").addClass("congratsButton");
+		nextButton.click(() => {
+			CongratsPanel.hide();
+			$("#chooser").show();
+			clearMessage();
+			assistant.reset();
+			updateState();
+			movesUL.fadeIn("slow");
+		});
+		
+		//adding everything to the panel and displaying panel
+		CongratsPanel.append(goalstateDisplay);
+		CongratsPanel.append(congratsMessage);
+		CongratsPanel.append(probleminfo);
+		CongratsPanel.append(nextButton);
+		CongratsPanel.append(exitButton);
+		$("body").append(CongratsPanel);
+	}
 
 }
